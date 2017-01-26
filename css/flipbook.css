@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,900");
+@-ms-viewport {
+  width: device-width; }
+
+html {
+  background-color: #f2f2f2;
+  overflow: hidden; }
+
+.test {
+  color: yellow;
+  background-color: black; }
+
+.page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll; }
+
+.card {
+  background-color: white;
+  width: 50vw;
+  padding: 5%;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 5%; }
+
+.active {
+  color: purple; }
+
+.button_wrap {
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+  z-index: 10000;
+  display: block; }
+  .button_wrap #next {
+    background-color: transparent;
+    position: relative;
+    border: 0;
+    height: 4em; }
+  .button_wrap #prev {
+    background-color: transparent;
+    position: relative;
+    height: 4em;
+    margin-right: 2em;
+    border: 0em; }
