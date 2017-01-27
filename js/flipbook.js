@@ -1,7 +1,7 @@
 // helpful terms
-	// card: the container for your content, in this example it is the white rectangle
-	// page: the container for your card(s) and the div that the animations/transitions are applied to. In this example it is the color background
-	   // each page is 100vh and 100vw, with overflow scrolling on. It can be populated with as many cards as needed
+    // card: the container for your content, in this example it is the white rectangle
+    // page: the container for your card(s) and the div that the animations/transitions are applied to. In this example it is the color background
+       // each page is 100vh and 100vw, with overflow scrolling on. It can be populated with as many cards as needed
     // book: the entire interactive that contains all pages
         // the book disbales overflow scrolling and the js uses trasnlateY to move up and down to the appropriate page 
     // window: the actively seen page
@@ -14,22 +14,26 @@ $(".page").last().addClass('last');
 function indexPages() {
     // adds index number to each instance of the page class
     $('.page').each(function (index, value) { 
-        $(this).attr('data-item', index+1);    
+        $(this).attr('data-item', index+1);
     });
 }
 
 
 function checkNavigation() {
-	// hides / shows the next/back buttons depending if the page is the first or last page in the book
+    // hides / shows the next/back buttons depending if the page is the first or last page in the book
     if ($('.active').hasClass('first')) {
         $('#prev').hide();
         $('#next').show();
+        $('#restart').hide();
     } else if ($('.active').hasClass('last')) {
         $('#next').hide();
         $('#prev').show();
+        $('#restart').show();
     } else {
         $('#prev').show();
         $('#next').show();
+        $('#restart').hide();
+
     }
 }
 
@@ -60,12 +64,12 @@ var retreat = function (activePage, prevPage){
 
 
 var navigation = function () {
-	// calls the advance/retreat functions based on button clicks
+    // calls the advance/retreat functions based on button clicks
     // adds conditional alterations for transitions
     checkNavigation();
 
     $('#next').click(function () {
-    	 // code for next button
+         // code for next button
         var activePage = $('.active'),
         nextPage = activePage.next('.page');
 
@@ -75,27 +79,43 @@ var navigation = function () {
             advance(activePage, nextPage)
             $('.button_wrap').hide();
         
-        	// gives user back control after time delay
-        	setTimeout(function(){
+            // gives user back control after time delay
+            setTimeout(function(){
                 $('.button_wrap').show();
-        	}, 2000)
+            }, 500)
             // more conditionals can go here as elifs
-        } else{
-        	// regular slide transition
-        	advance(activePage, nextPage)
+        } else if (nextPage.hasClass('exit_card')){
+            $('#exit').show();
+            advance(activePage, nextPage)
+
+            // console.log('swoop');
+        } else {
+            // regular slide transition
+            advance(activePage, nextPage)
+            $('#exit').hide();
         }
 
         checkNavigation();
     });
 
     $('#prev').click(function () {
-    	//prev slide function
+        //prev slide function
         var activePage = $('.active'),
         prevPage = activePage.prev('.page');
 
         retreat(activePage, prevPage)
 
         checkNavigation();
+    });
+
+    $('#restart').click(function () {
+        $('#book').css('transform', 'translateY(0px)').css('transition', '.6s ease-in-out');   
+        // firstPage = $('.page').first();
+        $('.active').removeClass('active')
+        $('.page').first().addClass('active')
+        $('#restart').hide()
+        checkNavigation();
+
     });
 }
 
@@ -106,8 +126,7 @@ var resizeWindow = function () {
     // at least this keeps the viewr on ther right page
     currentWindow = $('.active').height() * parseInt($('.active').attr('data-item')-1);
     $('#book').css('transform', 'translateY(-' + currentWindow +'px)');
-    
-
+   
 }
 
 
@@ -115,12 +134,18 @@ var resizeWindow = function () {
 $(document).ready(function () {
     indexPages();
     navigation();
-    window.onresize = function () { 
-        resizeWindow()
-    }
-
-
+    
 });
+
+$(window).resize(function (){
+    resizeWindow();
+    
+});
+
+
+
+
+
 
 // works referenced 
 // http://jsfiddle.net/794f4yvw/12/
