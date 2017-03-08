@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+@import 'breakpoints.scss';
+$box-shadow: 3px 6px 10px #888888;
+
+// xs 
+html{
+	font-family: 'Lato', sans-serif;
+	background-color: $light-gray;
+}
+
+h1{
+	font-size: 2em;
+	font-weight: 900;
+	margin-bottom: .5em;
+}
+
+h2{
+	font-size: 1.5em;
+	font-weight: 300;
+	margin-bottom: .5em;
+
+}
+
+h3{
+	font-size: 1em;
+	font-weight: 400;
+	margin-bottom: .5em;
+
+}
+
+h4{
+	font-size: 2em;
+	font-weight: 700;
+}
+
+p{
+	font-size: 1em;
+	line-height: 1.5em;
+	margin-bottom: 1em;
+	font-weight: 300;
+}
+code {
+  padding: .2rem .4rem;
+  font-size: 90%;
+  color: #bd4147;
+  background-color: #f9f2f4;
+  border-radius: .25rem; }
+
+ul{
+	margin-bottom: 1em;
+	li{
+		font-weight: 300;
+	}
+}
+
+img{
+	width: 100%;
+}
+a{
+	color: $Jamesblue;
+	text-decoration: none;
+}
+
+// buttons
+.card_button{
+	border: 0px;
+	background-color: rgba(0,0,0,.5);
+
+	color: white;
+	border-radius: 5px;
+	padding: 20px;
+	box-shadow: $box-shadow;
+	font-size: 1.5em;
+	margin-bottom: 1em;
+	margin-top: 1em;
+	font-weight: 700;
+	width: 250px;
+	height: 100px;
+}
+
+.card_button:hover{
+	background-color: $Jamesblue;
+	color: white;
+}
+
+
+.insurance{
+	
+}
+.denied_insurance{
+	background-color: $red;
+	
+	&:hover{
+		background-color: $red;
+	}
+}
+
+.approved_insurance{
+	// background-color: rgb(187,234,194);
+	background-color: $green;
+	
+	&:hover{
+		background-color: $green;
+	}
+}
+
+
+
+.character_page{
+	overflow: scroll;
+}
+
+.transparentCard{
+	background-color: transparent;
+	box-shadow: none;
+	padding: 5%;
+	padding-top: 0%;
+	padding-bottom: 0%;
+	text-align: left;
+	width: 80%;
+
+}
+
+.characterCard{
+	overflow: hidden;
+	background-color: white;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 1em;
+	margin-bottom: 0%;
+	box-shadow: $box-shadow;
+	margin-bottom: 2em;
+	border-radius: 5px;
+}
+
+
+
+.char_img{
+	position: relative;
+	max-width: 50%;
+	display: inline-block;
+	vertical-align: top;
+	width: 60%;
+	margin-right: 2em;
+}
+
+.emma_img{
+	background: url('../img/Emma.PNG') no-repeat center center ;
+	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	-o-background-size: cover;
+ 	background-size: cover;
+}
+
+.jordan_img{
+	background: url('../img/Jordan.PNG') no-repeat center center ;
+	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	-o-background-size: cover;
+ 	background-size: cover;
+}
+
+.leah_img{
+	background: url('../img/Leah.PNG') no-repeat center center ;
+	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	-o-background-size: cover;
+ 	background-size: cover;
+}
+.char_text{
+	position: relative;
+	max-width: 30%;
+	display: inline-block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	h3{
+		max-width: 25%;
+	}	
+}
+
+.exit_card{
+	display: none;
+	position: absolute;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0, .8);
+	z-index: 10000;
+	color: white;
+	.text-box{
+		margin-top: 15%;
+		margin-left: 12%;
+		opacity: 1;
+	}
+	.exit_cancel, .exit_reset{
+		font-weight: 700;
+	}
+}
+
+// small
+@media (min-width: $sm-min){
+	
+
+}
+
+// medium
+@media (min-width: $md-min){
+	
+	
+}
+
+// xs small
+@media (min-width: $lg-min){
+	
+}
+
+.clinic_hours{
+	.clinic{
+		&:first-child{
+			color: red;
+		}
+	}
+}

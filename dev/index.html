@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flipbook</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/flipbook.css">
+	<link rel="stylesheet" href="css/navbar.css">
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
+
+</head>
+<body>
+
+
+
+	<nav class="visible">
+<!-- 
+		<div class="logo">
+			
+		</div> -->
+
+
+
+		<div class="title xs-hidden sm-visible">
+			<h3>Flipbook</h3>
+					
+		</div>
+
+		<div class="social">
+
+			<ul>
+				<a href="http://www.facebook.com" class="popup">
+					<li class="fb-logo">
+						<img src="img/util/b.facebook.svg" alt="">
+					</li>
+				</a>
+
+				<a href="https://twitter.com"
+				 class="popup">
+					<li class="twitter-logo">
+						<img src="img/util/b.twitter.svg" alt="">
+					</li>
+				</a>
+
+				<!-- <a href="#comments">
+					<li class="comments-logo">
+						<img src="img/util/b.comments.svg" alt="">
+					</li>
+				</a> -->
+			</ul>
+		</div>
+		<progress value="0"></progress>
+	</nav>
+
+
+
+
+
+<div id="book">
+
+
+<div  class="page exitable">
+	<div class="card">
+	<h1>Flipbook</h1>
+	<h2>An alterative story format to help readers walk through a story </h2>
+
+
+
+	<br>
+	<p>Being developed by<a href="http://www.jamesbenedict.github.io"> James Benedict</a> | <a href="https://github.com/JamesBenedict/flipbook">Repo</a></p>
+	<p>Inspiration for the user interface comes from the <a href="https://www.nytimes.com/interactive/2016/08/05/sports/olympics-gymnast-simone-biles.html?_r=0">New York Times Rio coverage</a>  </p>
+
+
+
+	</div>
+</div>
+
+<div class="page exitable">
+
+	<div class="card transparentCard">
+		<h3>This is the page</h3>
+		<p>Pages hold cards.</p> <p> Think of it as a section in a writen story.</p>
+	</div>
+	<div class="card">
+		<h3>This is a card</h3>
+		<p>Cards hold content.</p> <p>Think of these as paragraphs in a written story.</p>
+	</div>	
+
+	<div class="card">
+		<p>You can have multiple cards on a page</p>
+
+		<p>When a viewer is finished with all the cards on a page they could move forward or backwards to a new set of cards. </p>
+	</div>
+
+	<div class="card transparentCard">
+		<p>Some cards have no background but behave like other cards</p>
+	</div>
+
+	<div class="card">
+		<p>And a card can be infinitely long</p>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare egestas mi at elementum. Curabitur consectetur magna congue, tempus ante malesuada, laoreet libero. Pellentesque habitant morbi trnistique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tristique efficitur sagittis. Nullam at mi mi. Aenean libero quam, molestie sed magna non, maximus consectetur urna. Morbi mauris ipsum, bibendum eu risus sit amet, tristique faucibus risus. Nulla bibendum, purus ut sodales pellentesque, erat justo iaculis odio, sit amet pellentesque turpis felis sed elit.</p>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare egestas mi at elementum. Curabitur consectetur magna congue, tempus ante malesuada, laoreet libero. Pellentesque habitant morbi trnistique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tristique efficitur sagittis. Nullam at mi mi. Aenean libero quam, molestie sed magna non, maximus consectetur urna. Morbi mauris ipsum, bibendum eu risus sit amet, tristique faucibus risus. Nulla bibendum, purus ut sodales pellentesque, erat justo iaculis odio, sit amet pellentesque turpis felis sed elit.</p>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare egestas mi at elementum. Curabitur consectetur magna congue, tempus ante malesuada, laoreet libero. Pellentesque habitant morbi trnistique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tristique efficitur sagittis. Nullam at mi mi. Aenean libero quam, molestie sed magna non, maximus consectetur urna. Morbi mauris ipsum, bibendum eu risus sit amet, tristique faucibus risus. Nulla bibendum, purus ut sodales pellentesque, erat justo iaculis odio, sit amet pellentesque turpis felis sed elit.</p>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare egestas mi at elementum. Curabitur consectetur magna congue, tempus ante malesuada, laoreet libero. Pellentesque habitant morbi trnistique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tristique efficitur sagittis. Nullam at mi mi. Aenean libero quam, molestie sed magna non, maximus consectetur urna. Morbi mauris ipsum, bibendum eu risus sit amet, tristique faucibus risus. Nulla bibendum, purus ut sodales pellentesque, erat justo iaculis odio, sit amet pellentesque turpis felis sed elit.</p>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare egestas mi at elementum. Curabitur consectetur magna congue, tempus ante malesuada, laoreet libero. Pellentesque habitant morbi trnistique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tristique efficitur sagittis. Nullam at mi mi. Aenean libero quam, molestie sed magna non, maximus consectetur urna. Morbi mauris ipsum, bibendum eu risus sit amet, tristique faucibus risus. Nulla bibendum, purus ut sodales pellentesque, erat justo iaculis odio, sit amet pellentesque turpis felis sed elit.</p>
+	</div>
+
+	<div class="card transparentCard"> 
+		<p>A page is always fullscreen and only shows the cards nested inside of it in the code.</p>
+		<p>While the transition make it appear that the cards are moving, it is actually the pages that are being fliped through.</p>
+	</div>
+</div>
+
+<div class="page exitable">
+	<div class="card">
+		<h3>Getting started</h3>
+		<p>The following is the basic setup of a flipbok project. The  <code>book</code> is a container for the entire project.</p>
+<code>
+	&lt;div id = &quot;book&quot;&gt; <br><br> &lt;div class = &quot;page&quot; <br> &lt;div class = &quot;card&quot;&gt; <br>...content... <br> &lt;/div&gt;&lt;/div&gt;
+
+	<br><br> &lt;div class = &quot;page&quot; <br> &lt;div class = &quot;card&quot;&gt; <br>...content... <br> &lt;/div&gt; <br> &lt;div class = &quot;card&quot;&gt; <br> ...content... <br> &lt;/div&gt;<br><br>
+
+	&lt;/div&gt;
+</code>
+	<br>
+	<br>
+
+	
+	</div>
+</div>
+
+<div class="page exitable time_delay">
+	<div class="card">
+		<h3>Conditional transitions</h3>
+		<p>You can add conditional transitions between pages in the <code>flipbook.js</code> file around line 100.</p>
+		<p>This page disables navigation for 3 seconds when you flip to it.</p>	
+		<p>You could also load different cards/pages depending how the user interacts with the walkthrough, skip a card, change styles, etc.</p>		
+	</div>
+</div>
+
+
+<div class="page">
+	<div class="card">
+		<p>This is still a work in progress. It is being developed as a UI for <a href="https://github.com/JamesBenedict/abortion_interactive">a IDS story</a> so there might be some remnants of that code scattered throughout this project. While most of the functional elements are developed, expect some style changes in the navbar, bottom navigation buttons and exit screen. The main function I'm working on next is a touch interaface to allow users to scroll between pages instead of flipping. If you have any suggstions, please reach out to me at jabenedi@indiana.edu.</p>
+	</div>
+</div>
+
+<!-- end of book -->
+</div>
+
+<div class="exit_card">
+	<div class="text-box">
+		<h1>You exited the walkthrough</h1>
+		<h2>If you want to contiune, press <span class="exit_cancel">here</span></h2>
+		<h2>If you want to restart, press <span class="exit_reset">here</span></h2>
+		
+	</div>
+</div>
+
+<div class="button_wrap">
+	<button id="exit">
+		<h4>EXIT</h4>
+	</button>
+
+	<button id="next">
+		<h4>next&nbsp;</h4>
+		<img src="img/util/next.png" alt="">
+	</button>
+
+	<button id="restart">
+		<h4>Restart&nbsp;</h4>
+	</button>
+
+	<button id="prev">
+		<img src="img/util/prev.png" alt="">
+	</button>
+</div>
+
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
+<script type="text/javascript" src="js/video.js"></script>
+<script type="text/javascript" src="js/flipbook.js"></script>
+
+<!--  <script type="text/javascript" src="js/app.js"></script>
+ -->
+
+
+
+
+</body>
+</html>
