@@ -135,11 +135,15 @@
 	</div>
 </div>
 
-<div class="page exitable time_delay">
+<div class="page exitable conditional">
 	<div class="card">
 		<h3>Conditional transitions</h3>
 		<p>You can add conditional transitions between pages in the <code>flipbook.js</code> file around line 100.</p>
-		<p>This page disables navigation for 3 seconds when you flip to it.</p>	
+		<p>This page disables navigation for 3 seconds and autoplays the following video when you flip to it.</p>
+		<video width="100%" controls class="autoplay" poster="img/test.jpg">
+				<source src="img/test.mp4" type="video/mp4">
+	  			Your browser doesn't support HTML5 video tag.
+			</video>	
 		<p>You could also load different cards/pages depending how the user interacts with the walkthrough, skip a card, change styles, etc.</p>		
 	</div>
 </div>
@@ -147,7 +151,7 @@
 
 <div class="page">
 	<div class="card">
-		<p>This is still a work in progress. It is being developed as a UI for <a href="https://github.com/JamesBenedict/abortion_interactive">a IDS story</a> so there might be some remnants of that code scattered throughout this project. While most of the functional elements are developed, expect some style changes in the navbar, bottom navigation buttons and exit screen. The main function I'm working on next is a touch interaface to allow users to scroll between pages instead of flipping. If you have any suggstions, please reach out to me at jabenedi@indiana.edu.</p>
+		<p>This is still a work in progress. It is being developed as a UI for an <a href="https://github.com/JamesBenedict/abortion_interactive"> IDS story</a> so there might be some remnants of that code scattered throughout this project. While most of the functional elements are developed, expect some style changes in the navbar, bottom navigation buttons and exit screen. The main function I'm working on next is a touch interaface to allow users to scroll between pages instead of flipping. If you have any suggstions, please reach out to me at jabenedi@indiana.edu.</p>
 	</div>
 </div>
 
@@ -184,15 +188,9 @@
 
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
+<!-- for the autoplayed video -->
 <script type="text/javascript" src="js/video.js"></script>
 <script type="text/javascript" src="js/flipbook.js"></script>
-
-<!--  <script type="text/javascript" src="js/app.js"></script>
- -->
-
-
-
 
 </body>
 </html>

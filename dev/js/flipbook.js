@@ -87,6 +87,14 @@ var waitingNav = function (activePage, nextPage){
     console.log('waiting');
 }
 
+function videoNav (activePage, nextPage) {
+  advance(activePage, nextPage);
+  videos = $('.autoplay'),
+  videos[0].play();
+  checkNavigation();
+  // console.log(videos)
+}
+
 var navigation = function () {
 	// calls the advance/retreat functions based on button clicks
     // adds conditional alterations for transitions
@@ -98,9 +106,11 @@ var navigation = function () {
         nextPage = activePage.next('.page');
 
         // Conditonal logic goes here
-       	if (nextPage.hasClass('time_delay')){
+       	if (nextPage.hasClass('conditional')){
             advance(activePage, nextPage);
             waitingNav(activePage, nextPage);
+            videoNav(activePage, nextPage);
+
         } else {
         	// regular slide transition
         	advance(activePage, nextPage);
