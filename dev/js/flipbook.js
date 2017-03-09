@@ -77,23 +77,19 @@ var retreat = function (activePage, prevPage){
 
 
 
-var waitingNav = function (activePage, nextPage){
+var conditional = function (activePage, nextPage){
     $('.button_wrap').hide();
     // // gives user back control after time delay
+    videos = $('.autoplay'),
+    videos[0].play();
     setTimeout(function(){
         $('.button_wrap').show();
         console.log('time')
     }, 3000)
     console.log('waiting');
+
 }
 
-function videoNav (activePage, nextPage) {
-  advance(activePage, nextPage);
-  videos = $('.autoplay'),
-  videos[0].play();
-  checkNavigation();
-  // console.log(videos)
-}
 
 var navigation = function () {
 	// calls the advance/retreat functions based on button clicks
@@ -108,8 +104,7 @@ var navigation = function () {
         // Conditonal logic goes here
        	if (nextPage.hasClass('conditional')){
             advance(activePage, nextPage);
-            waitingNav(activePage, nextPage);
-            videoNav(activePage, nextPage);
+            conditional(activePage, nextPage);
 
         } else {
         	// regular slide transition
