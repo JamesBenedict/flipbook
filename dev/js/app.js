@@ -607,3 +607,8 @@ $(document).ready(function () {
     }    
 });
 
+
+$(document).on('touchmove', function(e) {
+    e.preventDefault();
+});
+
