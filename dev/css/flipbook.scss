@@ -89,48 +89,6 @@ a{
 	
 }
 
-.arrow-up {
-  display: inline-block;
-  width: 6em;
-  height: 6em;
- 
-}
-
-.arrow-up:after {
-  content: '';
-	display: inline-block;
-	margin-top: 4em;
-
-  width: 4em;
-  height: 4em;
-  border-top: 1em solid $light-gray;
-  border-right: 1em solid $light-gray;
-  -moz-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.arrow-down {
-  display: inline-block;
-  width: 6em;
-  height: 6em;
-  // // border: 0.5em solid $light-gray;
-  // border-radius: 50%;
-  // margin-left: 0.75em;
-}
-
-.arrow-down:after {
-  content: '';
-	display: inline-block;
-  margin-bottom: 1em;
-  width: 4em;
-  height: 4em;
-  border-top: 1em solid $light-gray;
-  border-right: 1em solid $light-gray;
-  -moz-transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-}
 
 .card:first-child{
 	margin-top: 5em;
@@ -196,6 +154,48 @@ a{
 
 
 
+.arrow-up, .arrow-down {
+  display: inline-block;
+  width: 3em;
+  height: 2em;
+
+}
+
+.arrow-up:after {
+  content: '';
+	display: inline-block;
+	margin-top: .5em;
+  width: 2em;
+  height: 2em;
+  border-top: .8em solid $light-gray;
+  border-right: .8em solid $light-gray;
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+	
+}
+.arrow-down:after {
+	content: '';
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	border-top: .8em solid $light-gray;
+	border-right: .8em solid $light-gray;
+	-moz-transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+
+// .arrow-down {
+//   display: inline-block;
+//   width: 5em;
+//   height: 5em;
+//   // // border: 0.5em solid $light-gray;
+//   // border-radius: 50%;
+//   // margin-left: 0.75em;
+// }
+
+
 .button_wrap{
 	position: absolute;	
 	bottom: 5%;
@@ -204,7 +204,8 @@ a{
 	width: 90%;
 	p{
 		margin: 0em;
-		font-size: 7em;
+		padding: 0em;
+		font-size: 4em;
 		font-weight: 700;
 		text-transform: uppercase;
 		display: inline-block;
@@ -223,11 +224,14 @@ a{
 	    border: 0px;
 	    color: #333;
 		text-align: center;
-		padding: 3em;
+		// padding: 2em;
+		// padding-right: 2.5em;
+
 		width: auto;
-		min-width: 100px;
-		height: 20em;
-		min-height: 100px;
+		// min-width: 100px;
+		min-height: 100%;
+		// height: 8em;
+		// min-height: 100px;
 	}
 
 	#next,#prev, #restart{
@@ -236,12 +240,12 @@ a{
 
 	#prev{
 		margin-right: 2em;
-		padding-left: 5em;
-		padding-right: 5em;
+		// padding-left: 5em;
+		// padding-right: 5em;
 	}
 	#restart{
 		float: right;
-		line-height: 4em;
+		// line-height: 4em;
 		display: none;
 	}
 	#exit{
@@ -253,14 +257,6 @@ a{
 
 // small
 @media (min-width: $sm-min){
-	// .page{
-	// 	width: 70%;
-	// }
-
-}
-
-// medium
-@media (min-width: $md-min){
 .card{
 	width: 70%;
 }
@@ -268,12 +264,13 @@ a{
 	width: 80%;
 	right: 10%;
 	p{
-		font-size: 4em;
+		font-size: 3em;
 	}
 	button{
 		padding: 2em;
+		width: auto;
 		min-width: 100px;
-		height: 12em;
+		height: 5em;
 	}
 	#prev{
 		margin-right: 2em;
@@ -284,15 +281,14 @@ a{
 }	
 .arrow-up {
   display: inline-block;
-  width: 4em;
-  height: 4em;
- 
+  width: 2em;
+  height: 2em;
 }
 
 .arrow-up:after {
   content: '';
 	display: inline-block;
-	margin-top: 2em;
+	margin-top: 1.5em;
   width: 2em;
   height: 2em;
   border-top: 0.5em solid $light-gray;
@@ -304,8 +300,8 @@ a{
 
 .arrow-down {
   display: inline-block;
-  width: 4em;
-  height: 4em;
+  width: 2em;
+  height: 2em;
   // // border: 0.5em solid $light-gray;
   // border-radius: 50%;
   // margin-left: 0.75em;
@@ -325,6 +321,11 @@ a{
   transform: rotate(135deg);
 }
 	
+}
+
+
+// medium
+@media (min-width: $md-min){
 }
 
 // xs small
