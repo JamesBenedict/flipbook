@@ -182,14 +182,11 @@ a {
     .button_wrap p {
       font-size: 3em; }
     .button_wrap button {
-      padding: 2em;
       width: auto;
       min-width: 100px;
       height: 5em; }
     .button_wrap #prev {
-      margin-right: 2em;
-      padding-left: 4em;
-      padding-right: 4em; }
+      margin-right: 2em; }
   .arrow-up {
     display: inline-block;
     width: 2em;
