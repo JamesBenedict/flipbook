@@ -128,6 +128,11 @@ var navigation = function () {
         }
     });
 
+    $('#mydiv').on('swipedown',function(){
+        advance_conditions();
+    });
+    $('#mydiv').on('swipeup',function(){alert("swipeup..");} );
+
     // button input
     $('#next').click(function () {
         advance_conditions();
@@ -200,6 +205,8 @@ $(window).resize(function (){
 $(document).on('touchmove', function(e) {
     e.preventDefault();
 });
+
+
 
 
 // works referenced 
