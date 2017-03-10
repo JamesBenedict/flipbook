@@ -8,7 +8,7 @@ nav {
   -moz-transition: all 0.15s ease;
   -o-transition: all 0.15s ease;
   transition: all 0.15s ease;
-  height: 2.4em;
+  height: 4em;
   width: 100%;
   background-color: #f8f9f9;
   border-bottom: 1px solid #ccc;
@@ -33,29 +33,17 @@ nav {
     margin: 0;
     padding: 0;
     width: 50%;
-    text-align: center;
-    position: fixed;
-    left: 25%; }
-    nav .title ul {
-      list-style: none; }
-    nav .title li {
-      display: inline-block;
-      position: relative; }
-    nav .title li#nav-dropdown {
-      max-height: 8px;
-      margin-top: 0px;
-      left: 0px;
-      top: 0px; }
+    text-align: center; }
     nav .title h3 {
       display: inline-block;
-      margin-top: 5px;
+      margin-top: 20px;
       width: auto; }
     nav .title ul.dropdown {
       display: inline-block;
       position: relative; }
   nav .social {
     position: absolute;
-    top: 5px;
+    top: 15%;
     margin: 0;
     padding: 0;
     width: 25%;
@@ -73,8 +61,8 @@ nav {
       margin-right: 15px; }
     nav .social img {
       z-index: 1;
-      max-width: 30px;
-      max-height: 20px;
+      max-width: 2em;
+      max-height: 2em;
       margin-left: 20px;
       margin-top: 15%;
       margin-bottom: 7%; }

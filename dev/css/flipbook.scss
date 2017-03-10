@@ -153,48 +153,56 @@ a{
 }
 
 
-
-.arrow-up, .arrow-down {
+.arrow-up:hover, .arrow-down:hover{
+	background-color: $Jamesblue;
+}
+.arrow-up {
   display: inline-block;
-  width: 3em;
-  height: 2em;
-
+  width: 7em;
+  height: 7em;
+  // border: 0.5em solid $transparent-gray;
+	background-color: $transparent-gray;
+  border-radius: 50%;
+  margin-right: 0.75em;
 }
 
 .arrow-up:after {
   content: '';
 	display: inline-block;
-	margin-top: .5em;
-  width: 2em;
-  height: 2em;
-  border-top: .8em solid $dark-gray;
-  border-right: .8em solid $dark-gray;
+  margin-top: 2.4em;
+  width: 2.4em;
+  height: 2.4em;
+  border-top: 0.5em solid $light-gray;
+  border-right: 0.5em solid $light-gray;
   -moz-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
-	
 }
+
+.arrow-down {
+background-color: $transparent-gray;
+
+  display: inline-block;
+  width: 7em;
+  height: 7em;
+  // border: 0.5em solid $transparent-gray;
+  color: $light-gray;
+  border-radius: 50%;
+  margin-left: 0.75em;
+}
+
 .arrow-down:after {
-	content: '';
+  content: '';
 	display: inline-block;
-	width: 2em;
-	height: 2em;
-	border-top: .8em solid $dark-gray;
-	border-right: .8em solid $dark-gray;
-	-moz-transform: rotate(135deg);
-	-webkit-transform: rotate(135deg);
-	transform: rotate(135deg);
+  margin-top: 1.4em;
+  width: 2.4em;
+  height: 2.4em;
+  border-top: 0.5em solid $light-gray;
+  border-right: 0.5em solid $light-gray;
+  -moz-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
 }
-
-// .arrow-down {
-//   display: inline-block;
-//   width: 5em;
-//   height: 5em;
-//   // // border: 0.5em solid $light-gray;
-//   // border-radius: 50%;
-//   // margin-left: 0.75em;
-// }
-
 
 .button_wrap{
 	position: absolute;	
@@ -211,6 +219,12 @@ a{
 		display: inline-block;
 		color: $transparent-gray;	
 
+	}
+	p:hover{
+	
+			color: $Jamesblue;
+
+	
 	}
 	button{
 		border-radius: 5px;
@@ -233,7 +247,10 @@ a{
 		min-height: 100%;
 		// height: 8em;
 		// min-height: 100px;
+		
 	}
+	
+
 
 	#next,#prev, #restart{
 		float: right;
@@ -245,14 +262,19 @@ a{
 		// padding-right: 5em;
 	}
 	#restart{
-		float: right;
+		float: left;
 		// line-height: 4em;
 		display: none;
+	}
+	#restart:hover{
+			color: $Jamesblue;
+
 	}
 	#exit{
 		float: left;
 		display: none;
 	}
+
 }
 
 
@@ -279,46 +301,6 @@ a{
 	}
 	
 }	
-// .arrow-up {
-//   display: inline-block;
-//   width: 4em;
-//   height: 4em;
-//   border: 0.5em solid $transparent-gray;
-//   border-radius: 50%;
-//   margin-left: 0.75em;
-// }
-
-// .arrow-up:after {
-//   content: '';
-// 	display: inline-block;
-// 	margin-top: 1.5em;
-//   width: 2em;
-//   height: 2em;
-//   border-top: 0.5em solid $transparent-gray;
-//   border-right: 0.5em solid $transparent-gray;
-// }
-
-// .arrow-down {
-//   display: inline-block;
-//   width: 4em;
-//   height: 4em;
-//   border: 0.5em solid $transparent-gray;
-//   border-radius: 50%;
-//   margin-left: 0.75em;
-// }
-
-// .arrow-down:after {
-//   content: '';
-// 	display: inline-block;
-// 	  margin-bottom: 1em;
-
-//   width: 2em;
-//   height: 2em;
-//   border-top: 0.5em solid $transparent-gray;
-//   border-right: 0.5em solid $transparent-gray;
-  
-// }
-
 
 .arrow-up {
   display: inline-block;
