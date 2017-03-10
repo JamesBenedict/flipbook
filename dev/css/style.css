@@ -47,7 +47,7 @@ img {
   width: 100%; }
 
 a {
-  color: rgba(66, 112, 140, 0.8);
+  color: #42708c;
   text-decoration: none; }
 
 .card_button {
@@ -65,7 +65,7 @@ a {
   height: 100px; }
 
 .card_button:hover {
-  background-color: rgba(66, 112, 140, 0.8);
+  background-color: #42708c;
   color: white; }
 
 .denied_insurance {
