@@ -52,6 +52,7 @@ function checkNavigation() {
 var advance = function (activePage, nextPage){
     // transition to advance to next page 
     if (activePage.hasClass('last')){
+        // stops people from going past the last page
         console.log('swoop');
     } else{
         nextPage.addClass('active')
@@ -64,76 +65,52 @@ var advance = function (activePage, nextPage){
     }
 }
 
+function advance_conditions (){
+    var activePage = $('.active'),
+    nextPage = activePage.next('.page');
+
+    // Conditonal logic goes here
+    if (nextPage.hasClass('conditional')){
+        var direction = 'next',
+        newPage = nextPage;
+        conditional(activePage, newPage, direction);
+    } else {
+        // regular slide transition
+        advance(activePage, nextPage);
+        checkNavigation();
+    }
+}
+
 
 var retreat = function (activePage, prevPage){
     if (activePage.hasClass('first')){
        console.log('swoop');
     } else{
        // transitions to the previous page
-    prevPage.addClass('active')
-    activePage.removeClass('active')
+        prevPage.addClass('active')
+        activePage.removeClass('active')
 
-    var pageIndex = parseInt(activePage.attr('data-item')),
-    pageDepth = activePage.height() * pageIndex,
-    prevWindow =  pageDepth - (2 * activePage.height() );
-    // alert(depth)
-    $('#book').css('transform', 'translateY(-' + prevWindow+'px)').css('transition', '.6s ease-in-out');    
-    }
-
-    
-}
-
-
-
-
-
-var conditional = function (activePage, nextPage){
-    $('.button_wrap').hide();
-    document.getElementById("next").disabled = true;
-    document.getElementById("prev").disabled = true;
-    // // gives user back control after time delay
-    videos = $('.autoplay'),
-    videos[0].play();
-    setTimeout(function(){
-        $('.button_wrap').show();
-        // console.log('time')
-        document.getElementById("next").disabled = false;
-        document.getElementById("prev").disabled = false;
-
-    }, 3000)
-    console.log('waiting');
-    // checkNavigation();
-
-}
-function next (){
-    var activePage = $('.active'),
-    nextPage = activePage.next('.page');
-
-    // Conditonal logic goes here
-    if (nextPage.hasClass('conditional')){
-        advance(activePage, nextPage);
-        conditional(activePage, nextPage);
-
-    } else {
-        // regular slide transition
-        advance(activePage, nextPage);
-        checkNavigation();
+        var pageIndex = parseInt(activePage.attr('data-item')),
+        pageDepth = activePage.height() * pageIndex,
+        prevWindow =  pageDepth - (2 * activePage.height() );
+        // alert(depth)
+        $('#book').css('transform', 'translateY(-' + prevWindow+'px)').css('transition', '.6s ease-in-out');    
     }
 }
 
-function prev (){
+
+function retreat_conditions (){
     var activePage = $('.active'),
     prevPage = activePage.prev('.page');
 
     if (prevPage.hasClass('conditional')){
-        retreat(activePage, prevPage);
-        conditional(activePage, prevPage);
-
+        var direction = 'prev',
+        nextPage = prevPage;
+        conditional(activePage, nextPage, direction);
     } else {
         // regular slide transition
         retreat(activePage, prevPage);
         checkNavigation();
-
     }        
 }
 
@@ -142,33 +119,28 @@ var navigation = function () {
     // adds conditional alterations for transitions
     checkNavigation();
 
+    // keystroke
     $(document).keyup(function(key) {
         if (key.which === 40) {
-
-            next();
-            console.log('next push')
+            advance_conditions();
         } else if (key.which == 38) {
-            
-            prev();
-            // alert('up')
- 
+            retreat_conditions(); 
         }
     });
 
+    // button input
     $('#next').click(function () {
-         // code for next button
-         next();
+        advance_conditions();
     });
 
     $('#prev').click(function () {
         //prev slide function
-        prev();
+        retreat_conditions();
     });
 
     $('#restart').click(function () {
         $('#book').css('transform', 'translateY(0px)').css('transition', '.6s ease-in-out'); 
-                window.location.reload();
-        // firstPage = $('.page').first();
+        window.location.reload();
         $('.active').removeClass('active')
         $('.page').first().addClass('active')
         $('#restart').hide()
@@ -178,18 +150,30 @@ var navigation = function () {
     $('#exit').click(function () {
         $('.exit_card').css('display', 'inline-block');
         $('.exit_cancel').click(function () {
-            $('.exit_card').css('display', 'none');
+        $('.exit_card').css('display', 'none');
         })
-        $('.exit_reset').click(function () {
-            $('.exit_card').css('display', 'none');
-             $('#book').css('transform', 'translateY(0px)').css('transition', '.6s ease-in-out'); 
-                window.location.reload();
+    $('.exit_reset').click(function () {
+        $('.exit_card').css('display', 'none');
+        $('#book').css('transform', 'translateY(0px)').css('transition', '.6s ease-in-out'); 
+        window.location.reload();
         })
     
     // alert(nextWindow)
         checkNavigation();
     });
 }
+
+var conditional = function (activePage, newPage, direction){
+    videos = $('.autoplay'),
+    videos[0].play();
+    // checkNavigation();
+    if (direction == 'next'){
+        advance(activePage, newPage);
+    } else if (direction == 'prev'){
+        retreat(activePage, newPage);
+    }   
+}
+
 
 var resizeWindow = function () {
     // console.log('test')
