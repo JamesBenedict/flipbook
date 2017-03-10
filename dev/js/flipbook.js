@@ -221,13 +221,30 @@ $(document).on('touchmove', function(e) {
     // e.preventDefault();
     // alert('yo');
     $('#test').css('color', 'blue');
-    $(document).on('swipedown',function(){
+    // $(document).on('swipedown',function(){
        
-        $('#test').css('color', 'orange');
+    //     $('#test').css('color', 'orange');
 
-    });
+    // });
+
+
+
 
 });
+
+// $(document).on('swipe',function(){
+       
+//         $('#test').css('color', 'blue');
+
+//     });
+
+//     $(document).on('swipeup',function(){
+        
+//         alert('ys');
+        
+
+//     });
+
 
 
 
