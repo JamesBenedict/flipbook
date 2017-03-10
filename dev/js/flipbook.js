@@ -78,13 +78,19 @@ var retreat = function (activePage, prevPage){
 
 
 var conditional = function (activePage, nextPage){
-    $('.button_wrap').hide();
+    // $('.button_wrap').hide();
+    document.getElementById("next").disabled = true;
+    document.getElementById("prev").disabled = true;
+
     // // gives user back control after time delay
     videos = $('.autoplay'),
     videos[0].play();
     setTimeout(function(){
-        $('.button_wrap').show();
-        console.log('time')
+        // $('.button_wrap').show();
+        // console.log('time')
+        document.getElementById("next").disabled = false;
+    document.getElementById("prev").disabled = false;
+
     }, 3000)
     console.log('waiting');
 
@@ -177,6 +183,18 @@ $(window).resize(function (){
 $(document).on('touchmove', function(e) {
     e.preventDefault();
 });
+
+ $(document).keyup(function(e) {
+        if (e.which === 38) {
+
+            $("#prev").click()
+          
+        } else if (e.which == 40) {
+            //
+            $("#next").click()
+ 
+        }
+    });
 
 
 // works referenced 
