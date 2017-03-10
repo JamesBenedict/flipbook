@@ -124,8 +124,8 @@ a {
   margin-top: .5em;
   width: 2em;
   height: 2em;
-  border-top: 0.8em solid #f7f7f7;
-  border-right: 0.8em solid #f7f7f7;
+  border-top: 0.8em solid #d5d5d5;
+  border-right: 0.8em solid #d5d5d5;
   -moz-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg); }
@@ -135,8 +135,8 @@ a {
   display: inline-block;
   width: 2em;
   height: 2em;
-  border-top: 0.8em solid #f7f7f7;
-  border-right: 0.8em solid #f7f7f7;
+  border-top: 0.8em solid #d5d5d5;
+  border-right: 0.8em solid #d5d5d5;
   -moz-transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg); }
@@ -153,10 +153,10 @@ a {
     font-weight: 700;
     text-transform: uppercase;
     display: inline-block;
-    color: #f7f7f7; }
+    color: rgba(0, 0, 0, 0.6); }
   .button_wrap button {
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
     border: 0px;
     color: #333;
     text-align: center;
@@ -189,29 +189,36 @@ a {
       margin-right: 2em; }
   .arrow-up {
     display: inline-block;
-    width: 2em;
-    height: 2em; }
+    width: 4em;
+    height: 4em;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    margin-right: 0.75em; }
   .arrow-up:after {
     content: '';
     display: inline-block;
-    margin-top: 1.5em;
-    width: 2em;
-    height: 2em;
+    margin-top: 1.4em;
+    width: 1.4em;
+    height: 1.4em;
     border-top: 0.5em solid #f7f7f7;
     border-right: 0.5em solid #f7f7f7;
     -moz-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
   .arrow-down {
+    background-color: rgba(0, 0, 0, 0.6);
     display: inline-block;
-    width: 2em;
-    height: 2em; }
+    width: 4em;
+    height: 4em;
+    color: #f7f7f7;
+    border-radius: 50%;
+    margin-left: 0.75em; }
   .arrow-down:after {
     content: '';
     display: inline-block;
-    margin-bottom: 1em;
-    width: 2em;
-    height: 2em;
+    margin-top: 0.6em;
+    width: 1.4em;
+    height: 1.4em;
     border-top: 0.5em solid #f7f7f7;
     border-right: 0.5em solid #f7f7f7;
     -moz-transform: rotate(135deg);
