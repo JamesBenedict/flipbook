@@ -123,17 +123,29 @@ var navigation = function () {
     $(document).keyup(function(key) {
         if (key.which === 40) {
             advance_conditions();
+            $('#test').css('color', 'yellow');
+
         } else if (key.which == 38) {
             retreat_conditions(); 
+            $('#test').css('color', 'green');
+
         }
     });
 
-    $('html').on('swipedown',function(){
+    $('html').on('swipe',function(){
+       
+        $('#test').css('color', 'orange');
+
+    });
+
+    $('.active').on('swipedown',function(){
         advance_conditions();
         console.log('swoop');
         alert('ys');
+        $('#test').css('color', 'purple');
+
     });
-    $('html').on('swipeup',function(){alert("swipeup..");} );
+    $('.active').on('swipeup',function(){alert("swipeup..");} );
 
     // button input
     $('#next').click(function () {
@@ -155,6 +167,7 @@ var navigation = function () {
     });
 
     $('#exit').click(function () {
+
         $('.exit_card').css('display', 'inline-block');
         $('.exit_cancel').click(function () {
         $('.exit_card').css('display', 'none');
@@ -208,6 +221,11 @@ $(document).on('touchmove', function(e) {
     // e.preventDefault();
     alert('yo');
     $('#test').css('color', 'blue');
+    $(document).on('swipedown',function(){
+       
+        $('#test').css('color', 'orange');
+
+    });
 
 });
 
