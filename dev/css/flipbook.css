@@ -4,7 +4,7 @@
 
 html {
   font-family: 'Lato', sans-serif;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: #f7f7f7;
   overflow: hidden; }
 
 h1, h2, h3, h4 {
@@ -65,6 +65,40 @@ a {
   height: 100vh;
   overflow: scroll; }
 
+.arrow-up {
+  display: inline-block;
+  width: 6em;
+  height: 6em; }
+
+.arrow-up:after {
+  content: '';
+  display: inline-block;
+  margin-top: 4em;
+  width: 4em;
+  height: 4em;
+  border-top: 1em solid #f7f7f7;
+  border-right: 1em solid #f7f7f7;
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.arrow-down {
+  display: inline-block;
+  width: 6em;
+  height: 6em; }
+
+.arrow-down:after {
+  content: '';
+  display: inline-block;
+  margin-bottom: 1em;
+  width: 4em;
+  height: 4em;
+  border-top: 1em solid #f7f7f7;
+  border-right: 1em solid #f7f7f7;
+  -moz-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
 .card:first-child {
   margin-top: 5em; }
 
@@ -74,7 +108,7 @@ a {
 .card {
   background-color: white;
   overflow: scroll;
-  width: 70%;
+  width: 80%;
   padding: 5%;
   margin: 0 auto;
   margin-bottom: 2em;
@@ -116,73 +150,83 @@ a {
 .button_wrap {
   position: absolute;
   bottom: 5%;
-  right: 10%;
-  width: 80%; }
-  .button_wrap h4 {
-    display: inline-block;
+  right: 5%;
+  width: 90%; }
+  .button_wrap p {
+    margin: 0em;
+    font-size: 7em;
+    font-weight: 700;
     text-transform: uppercase;
-    position: relative;
-    width: 50%;
-    vertical-align: text-bottom;
-    margin-right: 5px;
-    color: rgba(0, 0, 0, 0.5);
-    color: white; }
-  .button_wrap #next {
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 2px 0px #d5d5d5;
-    border: 0;
-    height: auto;
-    width: auto;
     display: inline-block;
-    padding: 5px 5px 5px 5px;
-    float: right;
-    height: 50px; }
-    .button_wrap #next img {
-      display: inline-block;
-      width: 25px;
-      margin-left: 10%; }
-  .button_wrap #restart {
+    color: #f7f7f7; }
+  .button_wrap button {
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 2px 0px #d5d5d5;
-    border: 0;
-    height: auto;
-    width: 200px;
-    display: none;
-    padding: 5px 5px 5px 5px;
-    float: right;
-    height: 50px;
-    text-align: center; }
+    border: 0px;
+    color: #333;
+    text-align: center;
+    padding: 3em;
+    width: auto;
+    min-width: 100px;
+    height: 20em;
+    min-height: 100px; }
+  .button_wrap #next, .button_wrap #prev, .button_wrap #restart {
+    float: right; }
   .button_wrap #prev {
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 2px 0px #d5d5d5;
-    position: relative;
-    height: 4em;
     margin-right: 2em;
-    border: 0em;
-    padding: 5px 10px 5px 10px;
-    display: none;
+    padding-left: 5em;
+    padding-right: 5em; }
+  .button_wrap #restart {
     float: right;
-    margin-right: 2em;
-    height: 50px;
-    width: 50px; }
-    .button_wrap #prev img {
-      display: inline-block;
-      width: 25px; }
+    line-height: 4em;
+    display: none; }
   .button_wrap #exit {
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 2px 0px #d5d5d5;
-    position: relative;
-    height: 4em;
-    margin-right: 2em;
-    border: 0em;
-    height: 50px;
-    width: auto;
-    padding: 5px 10px 5px 10px;
-    display: inline-block;
-    text-align: left;
     float: left;
     display: none; }
+
+@media (min-width: 992px) {
+  .card {
+    width: 70%; }
+  .button_wrap {
+    width: 80%;
+    right: 10%; }
+    .button_wrap p {
+      font-size: 4em; }
+    .button_wrap button {
+      padding: 2em;
+      min-width: 100px;
+      height: 12em; }
+    .button_wrap #prev {
+      margin-right: 2em;
+      padding-left: 4em;
+      padding-right: 4em; }
+  .arrow-up {
+    display: inline-block;
+    width: 4em;
+    height: 4em; }
+  .arrow-up:after {
+    content: '';
+    display: inline-block;
+    margin-top: 2em;
+    width: 2em;
+    height: 2em;
+    border-top: 0.5em solid #f7f7f7;
+    border-right: 0.5em solid #f7f7f7;
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  .arrow-down {
+    display: inline-block;
+    width: 4em;
+    height: 4em; }
+  .arrow-down:after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 1em;
+    width: 2em;
+    height: 2em;
+    border-top: 0.5em solid #f7f7f7;
+    border-right: 0.5em solid #f7f7f7;
+    -moz-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg); } }

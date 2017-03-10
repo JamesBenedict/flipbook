@@ -174,6 +174,10 @@ $(window).resize(function (){
     
 });
 
+$(document).on('touchmove', function(e) {
+    e.preventDefault();
+});
+
 
 // works referenced 
 // http://jsfiddle.net/794f4yvw/12/
