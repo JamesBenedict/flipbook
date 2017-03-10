@@ -251,12 +251,11 @@ background-color: $dark-gray;
 
 	#prev{
 		margin-right: 1em;
+		display: none;
 	}
 	#restart, #exit{
 		float: left;
-		// line-height: 4em;
 		display: none;
-
 	}
 	#restart:hover, #exit:hover{
 		color: $Jamesblue;

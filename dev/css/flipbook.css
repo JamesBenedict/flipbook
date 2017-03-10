@@ -185,7 +185,8 @@ a {
   .button_wrap #next, .button_wrap #prev {
     float: right; }
   .button_wrap #prev {
-    margin-right: 1em; }
+    margin-right: 1em;
+    display: none; }
   .button_wrap #restart, .button_wrap #exit {
     float: left;
     display: none; }

@@ -1,7 +1,7 @@
 // helpful terms
-	// card: the container for your content, in this example it is the white rectangle
-	// page: the container for your card(s) and the div that the animations/transitions are applied to. In this example it is the color background
-	   // each page is 100vh and 100vw, with overflow scrolling on. It can be populated with as many cards as needed
+    // card: the container for your content, in this example it is the white rectangle
+    // page: the container for your card(s) and the div that the animations/transitions are applied to. In this example it is the color background
+       // each page is 100vh and 100vw, with overflow scrolling on. It can be populated with as many cards as needed
     // book: the entire interactive that contains all pages
         // the book disbales overflow scrolling and the js uses trasnlateY to move up and down to the appropriate page 
     // window: the actively seen page
@@ -20,7 +20,7 @@ function indexPages() {
 
 
 function checkNavigation() {
-	// hides / shows the next/back buttons depending if the page is the first or last page in the book
+    // hides / shows the next/back buttons depending if the page is the first or last page in the book
     if ($('.active').hasClass('first') || $('.active').prev('.page').hasClass('character_page') ) {
         $('#prev').hide();
         $('#next').show();
@@ -78,67 +78,71 @@ var retreat = function (activePage, prevPage){
 
 
 var conditional = function (activePage, nextPage){
-    // $('.button_wrap').hide();
+    $('.button_wrap').hide();
     document.getElementById("next").disabled = true;
     document.getElementById("prev").disabled = true;
-
     // // gives user back control after time delay
     videos = $('.autoplay'),
     videos[0].play();
     setTimeout(function(){
-        // $('.button_wrap').show();
+        $('.button_wrap').show();
         // console.log('time')
         document.getElementById("next").disabled = false;
-    document.getElementById("prev").disabled = false;
+        document.getElementById("prev").disabled = false;
 
     }, 3000)
     console.log('waiting');
 
 }
-
-
-var navigation = function () {
-	// calls the advance/retreat functions based on button clicks
-    // adds conditional alterations for transitions
-    checkNavigation();
-
-    $('#next').click(function () {
-    	 // code for next button
-        var activePage = $('.active'),
-        nextPage = activePage.next('.page');
+function next (){
+    var activePage = $('.active'),
+    nextPage = activePage.next('.page');
 
         // Conditonal logic goes here
-       	if (nextPage.hasClass('conditional')){
+        if (nextPage.hasClass('conditional')){
             advance(activePage, nextPage);
             conditional(activePage, nextPage);
 
         } else {
-        	// regular slide transition
-        	advance(activePage, nextPage);
+            // regular slide transition
+            advance(activePage, nextPage);
             checkNavigation();
 
         }
-    });
+}
 
-    $('#prev').click(function () {
-    	//prev slide function
-        var activePage = $('.active'),
+function prev (){
+    var activePage = $('.active'),
         prevPage = activePage.prev('.page');
 
         retreat(activePage, prevPage)
 
         checkNavigation();
+}
+
+var navigation = function () {
+    // calls the advance/retreat functions based on button clicks
+    // adds conditional alterations for transitions
+    checkNavigation();
+
+    $('#next').click(function () {
+         // code for next button
+         next();
+       
+    });
+
+    $('#prev').click(function () {
+        //prev slide function
+        prev();
     });
 
     $('#restart').click(function () {
         $('#book').css('transform', 'translateY(0px)').css('transition', '.6s ease-in-out'); 
                 window.location.reload();
-  
         // firstPage = $('.page').first();
         $('.active').removeClass('active')
         $('.page').first().addClass('active')
         $('#restart').hide()
-
         checkNavigation();
     });
 
