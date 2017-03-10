@@ -219,7 +219,7 @@ $(window).resize(function (){
 
 $(document).on('touchmove', function(e) {
     // e.preventDefault();
-    alert('yo');
+    // alert('yo');
     $('#test').css('color', 'blue');
     $(document).on('swipedown',function(){
        
