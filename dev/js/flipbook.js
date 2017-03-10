@@ -51,18 +51,25 @@ function checkNavigation() {
 
 var advance = function (activePage, nextPage){
     // transition to advance to next page 
-    nextPage.addClass('active')
-    activePage.removeClass('active')
+    if (activePage.hasClass('last')){
+        console.log('swoop');
+    } else{
+        nextPage.addClass('active')
+        activePage.removeClass('active')
 
-    var pageIndex = parseInt(activePage.attr('data-item')),
-    nextWindow = activePage.height() * pageIndex;
-    $('#book').css('transform', 'translateY(-' +nextWindow +'px)').css('transition', '.6s ease-in-out');
-    // alert(nextWindow)
+        var pageIndex = parseInt(activePage.attr('data-item')),
+        nextWindow = activePage.height() * pageIndex;
+        $('#book').css('transform', 'translateY(-' +nextWindow +'px)').css('transition', '.6s ease-in-out');
+        // alert(nextWindow)
+    }
 }
 
 
 var retreat = function (activePage, prevPage){
-    // transitions to the previous page
+    if (activePage.hasClass('first')){
+       console.log('swoop');
+    } else{
+       // transitions to the previous page
     prevPage.addClass('active')
     activePage.removeClass('active')
 
@@ -70,7 +77,10 @@ var retreat = function (activePage, prevPage){
     pageDepth = activePage.height() * pageIndex,
     prevWindow =  pageDepth - (2 * activePage.height() );
     // alert(depth)
-    $('#book').css('transform', 'translateY(-' + prevWindow+'px)').css('transition', '.6s ease-in-out');   
+    $('#book').css('transform', 'translateY(-' + prevWindow+'px)').css('transition', '.6s ease-in-out');    
+    }
+
+    
 }
 
 
@@ -92,32 +102,39 @@ var conditional = function (activePage, nextPage){
 
     }, 3000)
     console.log('waiting');
+    // checkNavigation();
 
 }
 function next (){
     var activePage = $('.active'),
     nextPage = activePage.next('.page');
 
-        // Conditonal logic goes here
-        if (nextPage.hasClass('conditional')){
-            advance(activePage, nextPage);
-            conditional(activePage, nextPage);
+    // Conditonal logic goes here
+    if (nextPage.hasClass('conditional')){
+        advance(activePage, nextPage);
+        conditional(activePage, nextPage);
 
-        } else {
-            // regular slide transition
-            advance(activePage, nextPage);
-            checkNavigation();
-
-        }
+    } else {
+        // regular slide transition
+        advance(activePage, nextPage);
+        checkNavigation();
+    }
 }
 
 function prev (){
     var activePage = $('.active'),
-        prevPage = activePage.prev('.page');
+    prevPage = activePage.prev('.page');
 
-        retreat(activePage, prevPage)
+    if (prevPage.hasClass('conditional')){
+        retreat(activePage, prevPage);
+        conditional(activePage, prevPage);
 
+    } else {
+        // regular slide transition
+        retreat(activePage, prevPage);
         checkNavigation();
+
+    }        
 }
 
 var navigation = function () {
@@ -125,10 +142,22 @@ var navigation = function () {
     // adds conditional alterations for transitions
     checkNavigation();
 
+    $(document).keyup(function(key) {
+        if (key.which === 40) {
+
+            next();
+            console.log('next push')
+        } else if (key.which == 38) {
+            
+            prev();
+            // alert('up')
+ 
+        }
+    });
+
     $('#next').click(function () {
          // code for next button
          next();
-       
     });
 
     $('#prev').click(function () {
@@ -187,18 +216,6 @@ $(window).resize(function (){
 $(document).on('touchmove', function(e) {
     e.preventDefault();
 });
-
- $(document).keyup(function(e) {
-        if (e.which === 38) {
-
-            $("#prev").click()
-          
-        } else if (e.which == 40) {
-            //
-            $("#next").click()
- 
-        }
-    });
 
 
 // works referenced 
