@@ -128,10 +128,12 @@ var navigation = function () {
         }
     });
 
-    $('#mydiv').on('swipedown',function(){
+    $('html').on('swipedown',function(){
         advance_conditions();
+        console.log('swoop');
+        alert('ys');
     });
-    $('#mydiv').on('swipeup',function(){alert("swipeup..");} );
+    $('html').on('swipeup',function(){alert("swipeup..");} );
 
     // button input
     $('#next').click(function () {
@@ -203,8 +205,12 @@ $(window).resize(function (){
 });
 
 $(document).on('touchmove', function(e) {
-    e.preventDefault();
+    // e.preventDefault();
+    alert('yo');
+    $('#test').css('color', 'blue');
+
 });
+
 
 
 
