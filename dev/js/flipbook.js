@@ -209,6 +209,7 @@ var resizeWindow = function () {
 $(document).ready(function () {
     indexPages();
     navigation();
+    scrollWatch();
     
 });
 
@@ -218,7 +219,7 @@ $(window).resize(function (){
 });
 
 $(document).on('touchmove', function(e) {
-    e.preventDefault();
+    // e.preventDefault();
     // alert('yo');
     $('#test').css('color', 'blue');
     // $(document).on('swipedown',function(){
@@ -245,8 +246,13 @@ $(document).on('touchmove', function(e) {
 
 //     });
 
+
+// all credit due http://stackoverflow.com/questions/7154967/how-to-detect-scroll-direction
+// http://stackoverflow.com/questions/7018919/how-to-bind-touchstart-and-click-events-but-not-respond-to-both
 // firefox
- $(document).bind('DOMMouseScroll', function(e){
+
+function scrollWatch (){
+    $(document).bind('DOMMouseScroll', function(e){
      if(e.originalEvent.detail > 0) {
          //scroll down
          console.log('Down');
@@ -263,17 +269,30 @@ $(document).on('touchmove', function(e) {
      return false;
  });
 
- //IE, Opera, Safari
+
+ //IE, Opera, Safari, chrome
+triggered = false;
  $(document).bind('mousewheel', function(e){
      if(e.originalEvent.wheelDelta < 0) {
          //scroll down
-         console.log('Down');
-             $('#test').css('color', 'blue');
+        console.log('Down');
+        $('#test').css('color', 'blue');
+        
+        if (!triggered){
+            triggered = true;
+            // advance_conditions();
+            setTimeout(function(){
+                triggered = false;
+            }, 1000);
+            advance_conditions();
+        } 
+        return false
+     
 
      }else {
          //scroll up
          console.log('Up');
-             $('#test').css('color', 'purple');
+        $('#test').css('color', 'purple');
 
      }
 
@@ -281,6 +300,8 @@ $(document).on('touchmove', function(e) {
      return false;
  });
 
+}
+ 
 
 
 
