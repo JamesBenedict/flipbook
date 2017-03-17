@@ -218,7 +218,7 @@ $(window).resize(function (){
 });
 
 $(document).on('touchmove', function(e) {
-    // e.preventDefault();
+    e.preventDefault();
     // alert('yo');
     $('#test').css('color', 'blue');
     // $(document).on('swipedown',function(){
