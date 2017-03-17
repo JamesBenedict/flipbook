@@ -128,6 +128,52 @@ html {
   height: 3em;
   background: linear-gradient(to bottom, transparent 40%, #f7f7f7 40%, #f7f7f7 60%, transparent 60%), linear-gradient(to right, transparent 40%, #f7f7f7 40%, #f7f7f7 60%, transparent 60%); }
 
+.reset {
+  background-color: #2a2a2a;
+  display: inline-block;
+  width: 5em;
+  height: 5em;
+  color: #f7f7f7;
+  border-radius: 50%; }
+
+.reset-icon {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border-width: .4em;
+  border-style: solid;
+  border-color: #f7f7f7;
+  border-left-color: transparent;
+  margin-top: 1.2em;
+  margin-left: 0em;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  font-style: normal;
+  color: #f7f7f7;
+  text-align: left;
+  text-indent: -9999px;
+  direction: ltr;
+  transform: scaleX(-1); }
+
+.reset-icon:before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -19px;
+  bottom: 0;
+  border-width: 14px;
+  border-style: solid;
+  border-color: #f7f7f7;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
 .button_wrap {
   position: absolute;
   bottom: 2%;
@@ -152,7 +198,7 @@ html {
     padding: 0em;
     height: auto;
     width: auto; }
-  .button_wrap #exit-icon, .button_wrap #restart {
+  .button_wrap #exit-icon, .button_wrap #reset {
     position: absolute;
     bottom: 40%; }
   .button_wrap #next, .button_wrap #prev {

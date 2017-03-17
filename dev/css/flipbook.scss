@@ -180,6 +180,103 @@ background-color: $dark-gray;
 
 
 
+// .restart-icon{
+
+// 	 border: 2px solid;
+
+// 	display: inline-block;
+//     vertical-align: middle;
+//     position: relative;
+//     font-style: normal;
+//     color: #ddd;
+//     text-align: left;
+//     text-indent: -9999px;
+//     direction: ltr;
+
+// 	width: 26px;
+//     height: 26px;
+//     border-radius: 50%;
+//     border-width: 2px;
+//     border-style: solid;
+//     border-left-color: transparent;
+//     margin: 4px;
+
+//     transition: all .2s;
+// }
+
+// .restart-icon:before{
+// 	position: absolute;
+//     width: 0;
+//     height: 0;
+//     left: -7px;
+//     bottom: 0;
+//     border-width: 6px;
+//     border-style: solid;
+//     border-right-color: transparent;
+//     border-left-color: transparent;
+//     border-bottom-color: transparent;
+//     -webkit-transform: rotate(135deg);
+//     -ms-transform: rotate(135deg);
+//     transform: rotate(135deg);
+
+// }
+
+// .restart-icon:after{
+// 	content: '';
+// 	pointer-events: none;
+// }
+
+.reset{
+	background-color: $dark-gray;
+	display: inline-block;
+	width: 5em;
+	height: 5em;
+	// border: 0.5em solid $dark-gray;
+	color: $light-gray;
+	border-radius: 50%;
+	// margin-left: 0.75em;
+}
+.reset-icon {	
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border-width: .4em;
+  border-style: solid;
+  border-color: $light-gray;
+  border-left-color: transparent;
+  margin-top: 1.2em;
+  margin-left: 0em;
+
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  font-style: normal;
+  color: $light-gray;
+  text-align: left;
+  text-indent: -9999px;
+  direction: ltr;
+  transform: scaleX(-1);
+}
+.reset-icon:before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -19px;
+  bottom: 0;
+  border-width: 14px;
+  border-style: solid;
+  border-color: $light-gray;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+
 
 .button_wrap{
 	position: absolute;	
@@ -216,7 +313,7 @@ background-color: $dark-gray;
 		height: auto;
 		width: auto;	
 	}
-	#exit-icon, #restart {
+	#exit-icon, #reset {
 		position: absolute;
 		bottom: 40%;
 	}
