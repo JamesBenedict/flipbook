@@ -245,6 +245,41 @@ $(document).on('touchmove', function(e) {
 
 //     });
 
+// firefox
+ $(document).bind('DOMMouseScroll', function(e){
+     if(e.originalEvent.detail > 0) {
+         //scroll down
+         console.log('Down');
+             $('#test').css('color', 'blue');
+
+     }else {
+         //scroll up
+         console.log('Up');
+             $('#test').css('color', 'purple');
+
+     }
+
+     //prevent page fom scrolling
+     return false;
+ });
+
+ //IE, Opera, Safari
+ $(document).bind('mousewheel', function(e){
+     if(e.originalEvent.wheelDelta < 0) {
+         //scroll down
+         console.log('Down');
+             $('#test').css('color', 'blue');
+
+     }else {
+         //scroll up
+         console.log('Up');
+             $('#test').css('color', 'purple');
+
+     }
+
+     //prevent page fom scrolling
+     return false;
+ });
 
 
 

@@ -23,6 +23,7 @@ html{
  // 	-o-background-size: cover;
  // 	background-size: cover;
 }
+
 .page{
 	position: relative;
 	width: 100vw;
@@ -34,18 +35,12 @@ html{
 }
 
 
-.card:first-child{
-	margin-top: 5em;
-}
 
-.card:last-child{
-	margin-bottom: 6em;
-}
 
 .card{
 	background-color: white;
 	overflow: scroll;
-	width: 80%;
+	width: 70%;
 	// max-height: 50%;
 	padding: 5%;
 	margin: 0 auto;
@@ -58,7 +53,14 @@ html{
     border-radius: 4px;
     background-color: #fff;
     color: #333;
+}
 
+.card:first-child{
+	margin-top: 5em;
+}
+
+.card:last-child{
+	margin-bottom: 6em;
 }
 
 .exit_card{
