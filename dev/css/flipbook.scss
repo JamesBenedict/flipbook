@@ -255,7 +255,9 @@ background-color: $dark-gray;
   text-align: left;
   text-indent: -9999px;
   direction: ltr;
-  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1) rotate(135deg);
+  -ms-transform: scaleX(-1) rotate(135deg);
+  transform: scaleX(-1) rotate(225deg);
 }
 .reset-icon:before {
   content: '';
