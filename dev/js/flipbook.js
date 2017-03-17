@@ -183,7 +183,7 @@ var navigation = function () {
     });
 }
 
-var conditional = function (activePage, newPage, direction){
+function conditional (activePage, newPage, direction){
     videos = $('.autoplay'),
     videos[0].play();
     // checkNavigation();
@@ -195,7 +195,7 @@ var conditional = function (activePage, newPage, direction){
 }
 
 
-var resizeWindow = function () {
+function resizeWindow () {
     // console.log('test')
     // would prefer something that didnt jump as much as this does during the scroll 
     // at least this keeps the viewr on ther right page
@@ -204,83 +204,35 @@ var resizeWindow = function () {
    
 }
 
-
-// loads the script duuuuuuuude
-$(document).ready(function () {
-    indexPages();
-    navigation();
-    scrollWatch();
-    
-});
-
-$(window).resize(function (){
-    resizeWindow();
-    
-});
-
-$(document).on('touchmove', function(e) {
-    // e.preventDefault();
-    // alert('yo');
-    $('#test').css('color', 'blue');
-    // $(document).on('swipedown',function(){
-       
-    //     $('#test').css('color', 'orange');
-
-    // });
-
-
-
-
-});
-
-// $(document).on('swipe',function(){
-       
-//         $('#test').css('color', 'blue');
-
-//     });
-
-//     $(document).on('swipeup',function(){
-        
-//         alert('ys');
-        
-
-//     });
-
-
+function scrollWatch (){
 // all credit due http://stackoverflow.com/questions/7154967/how-to-detect-scroll-direction
 // http://stackoverflow.com/questions/7018919/how-to-bind-touchstart-and-click-events-but-not-respond-to-both
-// firefox
+    triggered = false;
 
-function scrollWatch (){
+    // firefox
     $(document).bind('DOMMouseScroll', function(e){
-     if(e.originalEvent.detail > 0) {
-         //scroll down
-         console.log('Down');
-             $('#test').css('color', 'blue');
-
-     }else {
+        if(e.originalEvent.detail > 0) {
+        //scroll down
+        console.log('Down');
+        $('#test').css('color', 'blue');
+    } else {
          //scroll up
-         console.log('Up');
-             $('#test').css('color', 'purple');
-
+        console.log('Up');
+        $('#test').css('color', 'purple');
      }
-
      //prevent page fom scrolling
      return false;
  });
 
-
- //IE, Opera, Safari, chrome
-triggered = false;
- $(document).bind('mousewheel', function(e){
-     if(e.originalEvent.wheelDelta < 0) {
-         //scroll down
+    //IE, Opera, Safari, chrome
+    $(document).bind('mousewheel', function(e){
+    if(e.originalEvent.wheelDelta < 0) {
+        //scroll down
         console.log('Down');
         $('#test').css('color', 'blue');
         
         if (!triggered){
             triggered = true;
-            // advance_conditions();
             setTimeout(function(){
                 triggered = false;
             }, 1000);
@@ -293,18 +245,43 @@ triggered = false;
          //scroll up
          console.log('Up');
         $('#test').css('color', 'purple');
+        if (!triggered){
+            triggered = true;
+            setTimeout(function(){
+                triggered = false;
+            }, 1000);
+            retreat_conditions();
+        } 
+        return false
 
      }
-
      //prevent page fom scrolling
      return false;
  });
-
 }
- 
 
+// loads the script duuuuuuuude
+$(document).ready(function () {
+    indexPages();
+    navigation();
+    scrollWatch();
+});
 
+$(window).resize(function (){
+    resizeWindow();
+    
+});
 
+$(document).on('touchmove', function(e) {
+    e.preventDefault();
+    // alert('yo');
+    $('#test').css('color', 'blue');
+    // $(document).on('swipedown',function(){
+       
+    //     $('#test').css('color', 'orange');
+
+    // });
+});
 
 // works referenced 
 // http://jsfiddle.net/794f4yvw/12/
