@@ -72,17 +72,17 @@ html {
 
 .arrow-up {
   display: inline-block;
-  width: 7em;
-  height: 7em;
+  width: 5em;
+  height: 5em;
   background-color: #2a2a2a;
   border-radius: 50%; }
 
 .arrow-up:after {
   content: '';
   display: inline-block;
-  margin-top: 2.4em;
-  width: 2.4em;
-  height: 2.4em;
+  margin-top: 1.8em;
+  width: 1.8em;
+  height: 1.8em;
   border-top: 0.5em solid #f7f7f7;
   border-right: 0.5em solid #f7f7f7;
   -moz-transform: rotate(-45deg);
@@ -92,22 +92,41 @@ html {
 .arrow-down {
   background-color: #2a2a2a;
   display: inline-block;
-  width: 7em;
-  height: 7em;
+  width: 5em;
+  height: 5em;
   color: #f7f7f7;
   border-radius: 50%; }
 
 .arrow-down:after {
   content: '';
   display: inline-block;
-  margin-top: 1.4em;
-  width: 2.4em;
-  height: 2.4em;
+  margin-top: .8em;
+  width: 1.8em;
+  height: 1.8em;
   border-top: 0.5em solid #f7f7f7;
   border-right: 0.5em solid #f7f7f7;
   -moz-transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg); }
+
+.exit-icon {
+  background-color: #2a2a2a;
+  display: inline-block;
+  width: 5em;
+  height: 5em;
+  color: #f7f7f7;
+  border-radius: 50%; }
+
+.exit-icon:after {
+  content: '';
+  display: inline-block;
+  margin-top: 1em;
+  -moz-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  width: 3em;
+  height: 3em;
+  background: linear-gradient(to bottom, transparent 40%, #f7f7f7 40%, #f7f7f7 60%, transparent 60%), linear-gradient(to right, transparent 40%, #f7f7f7 40%, #f7f7f7 60%, transparent 60%); }
 
 .button_wrap {
   position: absolute;
@@ -133,7 +152,7 @@ html {
     padding: 0em;
     height: auto;
     width: auto; }
-  .button_wrap #exit, .button_wrap #restart {
+  .button_wrap #exit-icon, .button_wrap #restart {
     position: absolute;
     bottom: 40%; }
   .button_wrap #next, .button_wrap #prev {
